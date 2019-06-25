@@ -1,0 +1,6 @@
+hostname = ""
+oauth_token = ""
+organization = "hashicorp_v2"
+workspace_count = "5"
+branch = "master"
+repo = "hashicorp/terraform-random"
