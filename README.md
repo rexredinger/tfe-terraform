@@ -1,6 +1,6 @@
 # my-tfe
 
-Fork this repo and clone it to your local machine.
+Clone this repo to your local machine.
 
 ## Setup Vars
 ```
