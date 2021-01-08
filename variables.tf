@@ -2,7 +2,7 @@ variable "hostname" {
   type = string
 }
 
-variable "oauth_token" {
+variable "github_oauth_token" {
   type = string
 }
 
@@ -19,5 +19,9 @@ variable "branch" {
 }
 
 variable "repo" {
+  type = string
+}
+
+variable "working_directory" {
   type = string
 }
