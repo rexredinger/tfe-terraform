@@ -1,6 +1,6 @@
 provider "tfe" {
   hostname = var.hostname
-  version  = "~> 0.15.0"
+  version  = "~> 0.14.0"
 }
 
 resource "tfe_oauth_client" "oauth" {
