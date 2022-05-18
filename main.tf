@@ -1,6 +1,11 @@
 provider "tfe" {
   hostname = var.hostname
-  version  = "~> 0.14.0"
+  version  = "~> 0.31.0"
+}
+
+data "tfe_agent_pool" "test" {
+  name         = "FOR_DEBUG"
+  organization = var.organization
 }
 
 resource "tfe_oauth_client" "oauth" {
