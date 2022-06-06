@@ -1,12 +1,19 @@
-provider "tfe" {
-  hostname = var.hostname
-  version  = "~> 0.31.0"
+terraform {
+  required_providers {
+    tfe = {
+      version = "~> 0.31.0"
+    }
+  }
 }
 
-data "tfe_agent_pool" "test" {
-  name         = "FOR_DEBUG"
-  organization = var.organization
+provider "tfe" {
+  hostname = var.hostname
 }
+
+#data "tfe_agent_pool" "test" {
+#  name         = "FOR_DEBUG"
+#  organization = var.organization
+#}
 
 resource "tfe_oauth_client" "oauth" {
   organization     = var.organization
