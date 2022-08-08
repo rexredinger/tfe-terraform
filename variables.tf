@@ -8,18 +8,17 @@ variable "github_oauth_token" {
 
 variable "organization" {
   type = string
+  default = "workspaces_managerment"
 }
 
 variable "branch" {
   type = string
+  default = "workspace_child"
 }
 
 variable "repo" {
   type = string
-}
-
-variable "working_directory" {
-  type = string
+  default = "rexredinger/tfe-terraform"
 }
 
 variable "tfe_token" {

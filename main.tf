@@ -18,9 +18,9 @@ resource "tfe_oauth_client" "oauth" {
   service_provider = "github"
 }
 
-resource "tfe_workspace" "drift_detection" {
+resource "tfe_workspace" "parent_workspace" {
   organization      = var.organization
-  name              = "Drift_Detection"
+  name              = "ParentWorkspace"
   auto_apply        = false
   queue_all_runs    = true
 
@@ -36,7 +36,7 @@ resource "tfe_variable" "token" {
   value=var.tfe_token
   category="env"
   sensitive=true
-  workspace_id=tfe_workspace.drift_detection.id
+  workspace_id=tfe_workspace.parent_workspace.id
   description="This allows the build agent to call back to TFC when executing plans and applies"
 }
 
@@ -44,13 +44,13 @@ resource "tfe_variable" "organization" {
   key="organization"
   value=var.organization
   category="terraform"
-  workspace_id=tfe_workspace.drift_detection.id
-  description="Passing along the var setting from this config to the config that workspace drift_detection will use to generate the second workspace"
+  workspace_id=tfe_workspace.parent_workspace.id
+  description="Passing along the var setting from this config to the config that workspace parent_workspace will use to generate the second workspace"
 }
 
 resource "tfe_variable" "hostname" {
   key="hostname"
   value=var.hostname
   category="terraform"
-  workspace_id=tfe_workspace.drift_detection.id
+  workspace_id=tfe_workspace.parent_workspace.id
 }
