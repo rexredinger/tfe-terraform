@@ -10,10 +10,6 @@ variable "organization" {
   type = string
 }
 
-variable "workspace_count" {
-  type = string
-}
-
 variable "branch" {
   type = string
 }
@@ -23,5 +19,9 @@ variable "repo" {
 }
 
 variable "working_directory" {
+  type = string
+}
+
+variable "tfe_token" {
   type = string
 }
