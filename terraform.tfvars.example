@@ -1,7 +1,0 @@
-hostname = ""
-oauth_token = ""
-organization = "hashicorp"
-workspace_count = "12"
-branch = "master"
-repo = "jondavidjohn/terraform-tests"
-working_directory = "./slow-plan"
